@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Login | G-SWEETER</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+
+    <!--icon atas-->
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
+    <!--OG-->
+    <meta property='og:title' content="G-SWEETER - The sweetest site" >
+    <meta property='og:description' content="Are You Looking For Me" >
+    <meta property='og:image' content="{{url_for('static', filename='ogimage.jpg')}}" >
+    
+    <!--jika anda ingin menggunakan class CSS Bulma, pastikan anda telah mengimport library Bulma terlebih dahulu dan menggunakan classnya dibawah fungsi import tersebut -->
+    <!-- Bulma CSS -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css'/>
+
+    <!-- CSS-Ku -->
+    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+
+    <!-- JS -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'></script>
+    <script src="{{ url_for('static', filename='myjs.js') }}"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Script-->
+    <script>
+        // {% if msg %}
+        //     alert('{{ msg }}')
+        // {% endif %}
+        
+    </script>
+</head>
+<body>
+    <section class="hero is-white">
+        <div
+        class="hero-body has-text-centered"
+        style="padding-bottom: 1rem; margin: auto"
+        >
+        <h1 class="title is-sparta">SWEETER</h1>
+        <h3 class="subtitle is-sparta">The sweetest site</h3>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="box" style="max-width: 480px; margin: auto;">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+
+                            <div class="field has-addons">
+                                <div class="control has-icons-left" style="width: 100%;">
+                                    <input 
+                                    id="input-username"
+                                    class="input"
+                                    type="text"
+                                    placeholder="id"/>
+                                    
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </div>
+                                <div id="btn-check-dup" class="control is-hidden">
+                                    <button class="button is-sparta" onclick="check_dup()"> 
+                                        Check Your ID
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p id="help-id" class="help is-hidden">
+                                For your id, please type in 2-10 English characters, number, or special characters  (._-)
+                            </p>
+                            <p id="help-id-login" class="help is-danger">
+
+                            </p> 
+                            <!-- replikasi input -->
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input 
+                                    id="input-password"
+                                    class="input"
+                                    type="password"
+                                    placeholder="password"/>
+                                    
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                                <p id="help-password" class="help is-hidden">
+                                    For your password, please enter 8-10 English characters, number, or special characters  (._-!@#$*)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="div-sign-in-or-up" class="has-text-centered">
+                            <nav class="level is-mobile">
+                                <button onclick="sign_in()" class="level-item button is-sparta">
+                                    Sign In
+                                </button>
+                                <button onclick="clear_input()" class="level-item button">
+                                    Clear
+                                </button>
+                            </nav>
+                            <hr/>
+                            <h4 class="mb-3">If you have not yet signed up</h4>
+                            <nav class="level is-mobile">
+                                <button class="level-item button is-sparta is-outlined"
+                                onclick="toggle_sign_up()">
+                                Sign Up
+                                </button>
+                            </nav>
+                        </div>
+
+                        <div id="sign-up-box" class="is-hidden">
+                            <div class="mb-5">
+                                <div class="field">
+                                    <div class="control has-icons-left" style="width: 100%">
+                                        <input 
+                                        id="input-password2"
+                                        class="input"
+                                        type="password"
+                                        placeholder="Confirm your password"
+                                        >
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <p id="help-password2" class="help is-hidden">
+                                        Please enter in your password again
+                                    </p>
+                                </div>
+                            </div>
+                            <nav class="level is-mobile">
+                                <button class="level-item button is-sparta"
+                                onclick="sign_up()">
+                                Sign Up
+                                </button>
+                                <button class="level-item button is-sparta is-outlined"
+                                onclick="toggle_sign_up()">
+                                Cancel
+                                </button>
+                                <button class="level-item button is-outlined"
+                                onclick="clear_input()">
+                                Clear
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

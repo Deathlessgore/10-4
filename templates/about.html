@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About | G-SWEETER</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+
+    <!--icon atas-->
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon">
+    <!--OG-->
+    <meta property='og:title' content="G-SWEETER - The sweetest site" >
+    <meta property='og:description' content="Are You Looking For Me" >
+    <meta property='og:image' content="{{url_for('static', filename='ogimage.jpg')}}" >
+
+    <!-- Bulma CSS -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css'/>
+    <!-- CSS-Ku -->
+    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+
+    <!-- JS -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="{{url_for('static',filename='logo.png')}}" alt="logo">
+                    <strong class="is-sparta logo-text">
+                        SWEETER
+                    </strong>
+                </a>
+                <!--nanti-->
+                <span class="navbar-burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item"> Home </a>
+                <span class="navbar-item">
+                    <a class="button is-link">
+                    <span>Log out</span>
+                    </a>
+                    </span>
+                </div>
+        </div>
+        </div>
+    </nav>
+    
+    <section class="hero is-link is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">This Secret Page</p>
+                <p class="subtitle">{{user_info.profile_name}}</p>
+                
+            </div>
+            </div>
+    </section>
+</body>
+</html>
